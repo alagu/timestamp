@@ -37,6 +37,34 @@ h1 {
     text-align: center;
     margin-top: 30px;
     font-size: 30px;
+
+    #response-tz {
+
+      .bootstrap-select:not([class*="span"]) {
+        width: 420px;
+      }
+
+      .filter-option {
+        overflow: visible;
+      }
+
+      .dropdown-toggle {
+        padding: 5px;
+        font-size: 30px;
+        padding: 13px;
+      }
+      
+      .dropdown-menu ul li {
+        text-align: left;
+      } 
+
+      .select-value {
+        font-size: 30px;
+        padding: 10px;
+        margin: 10px 0;
+      }
+    }
+
   }
 
 }
