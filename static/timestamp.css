@@ -1,0 +1,43 @@
+/* line 1, timestamp.scss */
+.infobox {
+  width: 50%;
+  margin: 50px auto;
+  padding: 10px;
+  font-size: 12px;
+}
+/* line 7, timestamp.scss */
+.infobox h3 {
+  font-size: 14px;
+  text-align: center;
+}
+/* line 12, timestamp.scss */
+.infobox ul {
+  list-style: none;
+}
+/* line 15, timestamp.scss */
+.infobox td {
+  font-size: 12px;
+}
+
+/* line 20, timestamp.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 25, timestamp.scss */
+.interaction-box #main-timestamp-box {
+  font-size: 70px;
+  min-height: 90px;
+  padding: 10px;
+  margin: 0 auto;
+  width: 420px;
+  margin-top: 30px;
+  margin-left: 250px;
+  color: #000;
+}
+/* line 36, timestamp.scss */
+.interaction-box .response-box {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+}

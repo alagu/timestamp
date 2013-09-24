@@ -1,181 +1,54 @@
 <html>
   <head>
-  <title>Timestamp tools</title>
-  <style type="text/css">
+    <title>Timestamp Toolbox</title>
+    <link rel="stylesheet" href="//getbootstrap.com/2.3.2/assets/css/bootstrap.css">
+    <link href="static/timestamp.css" rel="stylesheet">
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-2819287-2']);
+    _gaq.push(['_trackPageview']);
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-  }
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-h1 {
-  text-align:center;
-  font-size:130%;
-  margin-bottom:0;
-}
-
-.tagline {
-  text-align:center;
-  font-size:80%;
-  color:#777;
-  margin-bottom:30px;
-}
-
-h2 {
-  font-size:105%;
-  margin:5px 0;
-}
-
-h3 {
-  font-size:103%;
-  margin:0;
-}
-
-.wrapper {
-  width : 900px;
-  border: 1px solid #ccc;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.content-block {
-  width : 400px;
-  margin : 10px;
-  padding : 10px;
-  border : 1px solid #aaa;
-}
-
-.time-table tr td {
-  padding-top:5px;
-}
-
-.inner-block {
-  border:1px solid #bbb;
-  padding:3px;
-  margin:5px 0;
-}
-
-ul {
-  list-style:none;
-}
-
-.create-date-table td {
-    font-size:12px;
-    text-align:center;
-}
-
-
-.normalbutton {
-    border:1px solid #000;
-    background-color:#eee;
-}
-
-  </style>
-  <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-2819287-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  </script>
+    </script>
   </head>
   <body>
-    <h1> Timestamp Tools </h1>
-    <div class="tagline">Calculate Timestamp</div>
-    <div class="wrapper clearfix">
-      <div style="float:left;">
-        <div class="content-block">
-          <input id="copybtn" class="normalbutton"  type="button" style="float:right;" value="Copy->">
-          <input id="toggleupdate" class="normalbutton"  type="button" style="float:right;" value="Pause">
-          <h2>Current : </h2>
-          <table class="time-table">
-            <tr> <td> Time </td><td>: <span id="current-timestamp-human"></span></td></tr>
-            <tr> <td> Timezone </td><td>: <span id="current-timezone-human"></span></td></tr>
-            <tr> <td> Timestamp </td><td>: <input type="text" id="current-timestamp" value=''></td></tr>
-          </table>
-        </div>
-        <div class="content-block">
-          <input id="copy-create-btn" class="normalbutton"  type="button" style="float:right;" value="Copy->">
-          <input id="update-create-btn" class="normalbutton"  type="button" style="float:right;" value="Create">
-          <h2>Choose a date : </h2>
-          <div class="inner-block">
-              <table class="create-date-table">
-                  <tr><td>Date</td><td></td><td>Month</td><td></td><td>Year</td><td>Hour</td><td></td><td>Min</td></tr>
-            <tr><td><select id="create-date"><option>dd</option></select></td><td>/</td>
-            <td><select id="create-month"><option>mm</option></select></td><td>/</td>
-            <td><select id="create-yr"><option>yy</option></select></td> 
-            <td><select id="create-hr"><option>hr</option></select></td><td>:</td>
-            <td><select id="create-min"><option>min</option></select></td></tr>
-            </table>
-          </div>
-
-          <table class="time-table">
-            <tr> <td> Timestamp </td><td>: <input type="text" id="create-timestamp" value=''></td></tr>
-            <tr> <td> Time </td><td>: <span id="create-timestamp-human"></span></td></tr>
-            <tr> <td> Timezone </td><td>: <span id="create-timezone-human"></span></td></tr>
-          </table>
-        </div>
-
-        <div class="content-block">
-          <input id="copy-custom-btn" class="normalbutton"  type="button" style="float:right;" value="Copy->">
-          <input id="update-custom-btn" class="normalbutton"  type="button" style="float:right;" value="Display">
-          <h2>Timestamp to Date : </h2>
-          <table class="time-table">
-            <tr> <td> Timestamp </td><td>: <input type="text" id="custom-timestamp" value=''></td></tr>
-            <tr> <td> Time </td><td>: <span id="custom-timestamp-human"></span></td></tr>
-            <tr> <td> Timezone </td><td>: <span id="custom-timezone-human"></span></td></tr>
-          </table>
+    <div class="container">
+      <h1> Timestamp Toolbox </h1>
+      <div class="interaction-box">
+        <input type="text" id="main-timestamp-box" value="1379908109">
+        <div class="response-box">
+          <span id="response-text"></span>
+          <span id="response-tz"></span>
         </div>
       </div>
-      <div class="content-block" style="float:left;">
-        <h2>Calculate</h2>
-        <h3>Initial:</h3>
-        <table class="time-table">
-          <tr> <td> Time </td><td>: <span id="initial-timestamp-human"></span></td></tr>
-          <tr> <td> Timezone </td><td>: <span id="initial-timezone-human"></span></td></tr>
-          <tr> <td> Timestamp </td><td>: <input type="text" id="initial-timestamp" value=''></td></tr>
-        </table>
 
-        <div class="inner-block" style="margin:30px 0;">
-          <select id="operation"><option value="add">Add</option><option value="sub">Sub</option></select>
-          <select id="calc-yr"></select> Yrs
-          <select id="calc-month"></select> Months
-          <select id="calc-days"></select> Days
-          <select id="calc-hrs"></select> Hrs
-          <div style="text-align:center; margin:5px;" >
-          <input class="normalbutton"  type="button" style="margin:2px auto;" value="Calculate" id="calculate">
-          </div>
-        </div>
-        <h3>Calculated:</h3>
-        <table class="time-table">
-          <tr> <td> Time </td><td>: <span id="calculated-timestamp-human"></span></td></tr>
-          <tr> <td> Timezone </td><td>: <span id="calculated-timezone-human"></span></td></tr>
-          <tr> <td> Timestamp </td><td>: <input type="text" id="calculated-timestamp" value=''></td></tr>
-        </table>
+
+      <div class="infobox">
+        <h3>Usecases</h3>
+        <ul>
+          <li>As a Dev, you want to see a timestamp like '1379908109' in a readable form</li>
+          <li>As a Dev, you want to see timestamp in a different timezone </li>
+        </ul>
+
+        <!--h3>Changelog</h3>
+        <table>
+          <tr><td>2011-05-26</td><td>Added 00 as per manu's request</td></tr>
+          <tr><td>2011-05-25</td><td>Add auto update, choose date shows current date</td></tr>
+          <tr><td>2011-04-20</td><td>Fix the minute issue</td></tr>
+          <tr><td>2010-12-06</td><td>Creating date from timestamp and dropdown works now, added this changelog</td></tr>
+          <tr><td>2010-09-02</td><td>First release</td></tr>
+        </table-->
       </div>
     </div>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://hacks.bluesmoon.info/strftime/strftime-min.js"></script>
-    <script type="text/javascript" src="static/date.js"> </script>
-    <script type="text/javascript" src="static/timestamp.js"> </script>
-    <div style="width: 50%; margin: 50px auto; border: 1px solid rgb(119, 119, 119); padding: 10px;">
-      <h3>Changelog</h3>
-      <table>
-        <tr><td>2011-05-26</td><td>Added 00 as per manu's request</td></tr>
-        <tr><td>2011-05-25</td><td>Add auto update, choose date shows current date</td></tr>
-        <tr><td>2011-04-20</td><td>Fix the minute issue</td></tr>
-        <tr><td>2010-12-06</td><td>Creating date from timestamp and dropdown works now, added this changelog</td></tr>
-        <tr><td>2010-09-02</td><td>First release</td></tr>
-      </table>
-    </div>
+
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script type="text/javascript" src="static/timestamp.js"> </script>
+      
   </body>
 </html>
