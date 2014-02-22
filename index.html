@@ -27,7 +27,7 @@
           <span id="response-tz">
             <select class="selectpicker">
               <option class="select-value" value="America/Los_Angeles">America/Los_Angeles (-700)</option>
-              <option class="select-value" value="Asia/Kolkata">Asia/Kolkata (+530)</option>
+              <option class="select-value" selected value="Asia/Kolkata">Asia/Kolkata (+530)</option>
             </select>
           </span>
         </div>
@@ -40,21 +40,13 @@
           <li>As a Dev, you want to see a timestamp like '1379908109' in a readable form</li>
           <li>As a Dev, you want to see timestamp in a different timezone </li>
         </ul>
-
-        <!--h3>Changelog</h3>
-        <table>
-          <tr><td>2011-05-26</td><td>Added 00 as per manu's request</td></tr>
-          <tr><td>2011-05-25</td><td>Add auto update, choose date shows current date</td></tr>
-          <tr><td>2011-04-20</td><td>Fix the minute issue</td></tr>
-          <tr><td>2010-12-06</td><td>Creating date from timestamp and dropdown works now, added this changelog</td></tr>
-          <tr><td>2010-09-02</td><td>First release</td></tr>
-        </table-->
       </div>
     </div>
-    <script type="text/javascript" src="http://hacks.bluesmoon.info/strftime/strftime-min.js"></script>
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-      <script type="text/javascript" src="static/timezone.js"> </script>
+      <script type="text/javascript" src="static/moment.min.js"> </script>
+      <script type="text/javascript" src="static/moment-timezone.min.js"> </script>
+      <script type="text/javascript" src="static/moment-timezone-data.js"> </script>
       <script type="text/javascript" src="static/timestamp.js"> </script>
 
       <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
